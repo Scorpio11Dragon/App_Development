@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      Selection
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-list>
+    <ion-toolbar>
+      <ion-searchbar placeholder="Search Pokemon" [formControl]="searchControl" animated="true"></ion-searchbar>
+    </ion-toolbar>
+    <ion-item *ngFor="let poke of pokemon;" [routerLink]="poke.pokeIndex">
+      <ion-avatar slot="start">
+        <img [src]="poke.image" style="background-color: #f2f2f2;" alt="">
+      </ion-avatar>
+      <ion-label class="ion-text-capatalize">
+        <h2>{{ poke.name }}</h2>
+        <p>#{{ poke.pokeIndex }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
